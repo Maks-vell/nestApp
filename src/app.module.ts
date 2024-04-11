@@ -6,8 +6,6 @@ import * as process from 'node:process';
 import { User } from './users/users.model';
 
 @Module({
-  controllers: [],
-  providers: [],
   imports: [
     ConfigModule.forRoot({
       envFilePath: `.${process.env.NODE_ENV}.env`
@@ -25,5 +23,4 @@ import { User } from './users/users.model';
     UsersModule,
   ],
 })
-export class AppModule {
-}
+export class AppModule {}
