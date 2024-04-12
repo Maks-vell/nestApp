@@ -15,6 +15,7 @@ export class UsersService {
     const user = await this.userRepository.create(createUserDto);
     const role = await this.rolesService.getRoleByValue('USER');
     await user.$set('roles', [role.id]);
+    user.roles = [role];
     return user;
   }
 
@@ -22,4 +23,7 @@ export class UsersService {
     return await this.userRepository.findAll({ include: { all: true } });
   }
 
+  async getUserByEmail(email: string) {
+    return await this.userRepository.findOne({ rejectOnEmpty: undefined, where: { email }, include: { all: true }});
+  }
 }
