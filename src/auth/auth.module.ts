@@ -13,14 +13,14 @@ import * as process from 'node:process';
     JwtModule.register({
       secret: process.env.JWT_PRIVATE_KEY || 'SECRET',
       signOptions: {
-        expiresIn: '24h'
-      }
+        expiresIn: '24h',
+      },
     }),
   ],
-  exports:[
+  exports: [
     AuthService,
-    JwtModule
-  ]
+    JwtModule,
+  ],
 })
 
 export class AuthModule {

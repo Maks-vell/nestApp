@@ -7,7 +7,8 @@ import { ApiTags } from '@nestjs/swagger';
 @Controller('roles')
 export class RolesController {
 
-  constructor(private rolesService: RolesService) {}
+  constructor(private rolesService: RolesService) {
+  }
 
   @Post()
   create(@Body() createRoleDto: CreateRoleDto) {

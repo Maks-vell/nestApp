@@ -30,7 +30,7 @@ import { JwtModule } from '@nestjs/jwt';
     RolesModule,
     UserRoles,
     AuthModule,
-    JwtModule
+    JwtModule,
   ],
 })
 export class AppModule {

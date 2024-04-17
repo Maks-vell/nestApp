@@ -38,10 +38,10 @@ export class RolesGuard implements CanActivate {
 
       const user = this.jwtService.verify(token);
       req.user = user;
-      req.user = this.jwtService.verify(token);
-      return user.roles.some(role => role.requiredRoles.includes(role.value));
+      return user.roles.some(role => requiredRoles.includes(role.value));
     } catch (e) {
-      throw new HttpException('No acces', HttpStatus.FORBIDDEN);
+      console.log(e);
+      throw new HttpException('No access', HttpStatus.FORBIDDEN);
     }
   }
 }
