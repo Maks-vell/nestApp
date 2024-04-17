@@ -7,7 +7,6 @@ import { Roles } from '../auth/roles-auth.decorator';
 import { RolesGuard } from '../auth/roles.guard';
 import { AddRoleDto } from './dto/add-role.dto';
 import { BanUserDto } from './dto/ban-user.dto';
-import { ValidationPipe } from '../pipe/validation.pipe';
 
 @ApiTags('users')
 @Controller('users')
